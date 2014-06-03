@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% load staticfiles %}
+
+    <div id="user_items">
+            {% for item in items %}
+                <h3> {{ item.title }}  ////   {{ item.genre }}    </h3>
+                <p> <a href="/click/{{ user.reader.user_id}}/{{ item.id}}"> Habere Tıkla </a>   </p>
+
+
+            {% endfor %}
+    </div>
+
+{% endblock %}

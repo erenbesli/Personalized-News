@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personalized News</title>
+</head>
+
+<body>
+
+<div id="pageController">
+    <div id="nav_top_right">
+           {%  if user.is_authenticated  %} <p> <a href="/logout/"> Log Out  </a> </p>  {% else %}  <p><a href="/login/"> Log In  </a></p>
+            {% endif %}
+    </div>
+
+
+ <div id="nav_top_right">
+   <p> <a href="/news/"> All News </a>  &nbsp&nbsp  <a href="/userBasedRecedNews/"> User Based Recommendation </a>  &nbsp&nbsp
+       <a href="/itemBasedRecedNews/"> Item Based Recommendation </a>   </p>
+    </br>
+    </div>
+
+ <div id="nav_top_right">
+   <p>
+   <a href="/HealthNews/"> Healt News </a>  &nbsp&nbsp  <a href="/MoviesNews/"> Movies News </a> &nbsp&nbsp
+   <a href="/MusicNews/"> Music News </a>   &nbsp&nbsp  <a href="/SportNews/"> Sport News </a> &nbsp&nbsp
+   <a href="/WorldNews/"> World News </a>
+   </p>
+    </br>
+    </div>
+
+</div>
+
+ Merhaba {{ user.username }} <br>
+-----------------------
+
+<div id="pageContainer">
+    {% block content %}
+    {% endblock %}
+
+</div>
+</body>
+</html>
